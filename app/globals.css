@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  --surface-deep: #060d16;
+  --surface-base: #123049;
+  --accent-cyan: rgba(56, 224, 245, 0.45);
+  --accent-violet: rgba(183, 148, 246, 0.35);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-inter), Arial, Helvetica, sans-serif;
+  background:
+    radial-gradient(ellipse 130% 70% at 50% -35%, rgba(56, 224, 245, 0.11), transparent 50%),
+    radial-gradient(circle at 92% 8%, rgba(232, 121, 249, 0.1), transparent 32%),
+    radial-gradient(circle at 5% 55%, rgba(139, 92, 246, 0.12), transparent 38%),
+    radial-gradient(circle at 50% 110%, rgba(15, 40, 65, 0.65), transparent 48%),
+    linear-gradient(180deg, #0a1623 0%, #123049 42%, #0e2d44 100%);
+  color: #fff;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: rgba(56, 224, 245, 0.35);
+  color: #fff;
+}
+
+.glass-shine {
+  position: relative;
+  overflow: hidden;
+}
+
+.glass-shine::before {
+  content: "";
+  position: absolute;
+  inset: -120%;
+  background: linear-gradient(
+    120deg,
+    transparent 32%,
+    rgba(158, 242, 255, 0.06) 48%,
+    rgba(255, 255, 255, 0.1) 52%,
+    transparent 68%
+  );
+  transform: translateX(-15%);
+  animation: sheen 7s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes sheen {
+  0% {
+    transform: translateX(-45%);
+  }
+  100% {
+    transform: translateX(45%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto;
+  }
+}
