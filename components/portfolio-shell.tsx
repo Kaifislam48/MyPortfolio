@@ -219,28 +219,15 @@ export default function PortfolioShell() {
               Crafting <TypingHeadline words={activeProfile.typingWords} />
             </p>
             <div className="flex flex-wrap items-center gap-3">
-              {view === "ai" && (
-                <motion.div whileHover={{ y: -3, scale: 1.01 }} whileTap={{ scale: 0.99 }}>
-                  <Link
-                    href="/resumes/resume-ai-ml.pdf"
-                    className="group inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-violet-500 via-fuchsia-500 to-cyan-400 px-4 py-2.5 text-sm font-semibold text-black shadow-glow transition hover:shadow-glow-lg"
-                  >
-                    Download AI & ML Resume
-                    <Download size={15} className="transition group-hover:translate-y-0.5" />
-                  </Link>
-                </motion.div>
-              )}
-              {view === "software" && (
-                <motion.div whileHover={{ y: -3, scale: 1.01 }} whileTap={{ scale: 0.99 }}>
-                  <Link
-                    href="/resumes/resume-software-engineer.pdf"
-                    className="inline-flex items-center gap-2 rounded-xl border border-cyan-300/45 bg-cyan-300/10 px-4 py-2.5 text-sm font-semibold text-cyan-100 transition hover:border-cyan-200 hover:bg-cyan-300/15"
-                  >
-                    Download Software Resume
-                    <Download size={15} />
-                  </Link>
-                </motion.div>
-              )}
+              <motion.div whileHover={{ y: -3, scale: 1.01 }} whileTap={{ scale: 0.99 }}>
+                <Link
+                  href="/resumes/ResumeForSDERole.pdf"
+                  className="group inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-violet-500 via-fuchsia-500 to-cyan-400 px-4 py-2.5 text-sm font-semibold text-black shadow-glow transition hover:shadow-glow-lg"
+                >
+                  Download Resume
+                  <Download size={15} className="transition group-hover:translate-y-0.5" />
+                </Link>
+              </motion.div>
               <a
                 href="#contact"
                 className="inline-flex items-center gap-2 rounded-xl border border-white/30 bg-white/5 px-5 py-3 text-sm font-semibold text-white transition hover:border-white hover:bg-white/10"
@@ -494,7 +481,7 @@ export default function PortfolioShell() {
         <section className="mt-24">
           <h2 className="mb-6 text-2xl font-bold">Projects</h2>
           <div className="grid gap-6 md:grid-cols-2">
-            <AnimatePresence mode="wait">
+            <AnimatePresence mode="popLayout">
               {filteredProjects.map((project, index) => (
                 <motion.article
                   key={`${project.title}-${view}`}
@@ -649,15 +636,9 @@ export default function PortfolioShell() {
                 <Phone size={16} /> {personalInfo.phone}
               </p>
             </div>
-            <div className="mt-7 grid gap-3 sm:grid-cols-2">
-              <Link href="/resumes/resume-ai-ml.pdf" className="rounded-xl border border-white/20 px-4 py-3 text-center text-sm hover:bg-white/10">
-                Download AI & ML Resume
-              </Link>
-              <Link
-                href="/resumes/resume-software-engineer.pdf"
-                className="rounded-xl border border-white/20 px-4 py-3 text-center text-sm hover:bg-white/10"
-              >
-                Download Software Resume
+            <div className="mt-7 grid gap-3">
+              <Link href="/resumes/ResumeForSDERole.pdf" className="rounded-xl border border-white/20 px-4 py-3 text-center text-sm hover:bg-white/10">
+                Download Resume
               </Link>
             </div>
           </motion.div>

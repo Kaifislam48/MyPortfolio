@@ -118,6 +118,26 @@ export const projects = [
     demo: ""
   },
   {
+    title: "FlowMind AI",
+    type: "ai",
+    description:
+      "Autonomous AI agent for business operations — automates lead analytics, CRM workflows, and data-driven decision-making with intelligent pipeline orchestration.",
+    stack:
+      "Node.js, Express, MongoDB, Gemini AI, Docker, GitHub Actions, REST APIs",
+    github: "https://github.com/Kaifislam48/FlowMind-AI-Autonomous-Business-Operations-Agent",
+    demo: ""
+  },
+  {
+    title: "InterviewIQ",
+    type: "software",
+    description:
+      "Enterprise-grade AI-powered technical assessment & interview intelligence platform with ATS resume feedback, AI mock interviews, timed assessments, sandboxed code execution, and progress analytics.",
+    stack:
+      "MERN, Gemini AI, JWT, Helmet, Docker, Node.js VM Sandbox, Mongoose, GitHub Actions, Vercel, Render",
+    github: "https://github.com/Kaifislam48/InterviewIQ-AI-Powered-Technical-Assessment-Interview-Intelligence-Platform",
+    demo: ""
+  },
+  {
     title: "ShopSense AI",
     type: "software",
     description:
