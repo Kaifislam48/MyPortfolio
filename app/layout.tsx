@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { ThemeProvider } from "@/components/theme-provider";
+import ThemeSwitcher from "@/components/theme-switcher";
+import AnimatedBackground from "@/components/animated-background";
+import CursorGlow from "@/components/cursor-glow";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -11,7 +15,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Kaif Islam | AI & ML Engineer & Full Stack Developer",
   description:
-    "Portfolio of Kaif Islam - AI &amp; ML Engineer and Full Stack Developer building intelligent, production-grade digital products.",
+    "Portfolio of Kaif Islam - AI & ML Engineer and Full Stack Developer building intelligent, production-grade digital products.",
   keywords: [
     "Kaif Islam",
     "AI Engineer",
@@ -34,7 +38,14 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} antialiased`}>{children}</body>
+      <body className={`${inter.variable} antialiased`}>
+        <ThemeProvider>
+          <AnimatedBackground />
+          <CursorGlow />
+          {children}
+          <ThemeSwitcher />
+        </ThemeProvider>
+      </body>
     </html>
   );
 }
